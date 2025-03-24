@@ -4,32 +4,434 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marypet's</title>
-    <link href="/css/styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // JavaScript to toggle mobile menu
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
 </head>
-<body class="bg-gray-100">
-    <div id="header" class="bg-white h-20 flex items-center justify-between px-6">
+<body class="flex flex-col min-h-screen bg-neutral-100">
+    <!-- Header with Menu -->
+    <div id="header" class="fixed top-0 left-0 w-full bg-neutral-800 bg-opacity-80 z-50 flex items-center justify-between px-6 py-1 shadow-md">
+        <!-- Logo -->
         <div id="logo">
             <a href="#section1">
-                <img src="/images/logo.gif" alt="Marypets Logo" class="h-12">
-                <!--<video autoplay loop muted playsinline>
-                  <source src="/images/logo.mp4" type="video/mp4">
-                  Seu navegador não suporta a tag de vídeo.
-                  </video>-->
+                <img src="/images/logo-static.png" alt="Marypets Logo" class="h-8 md:h-10">
             </a>
-
         </div>
-        <div id="menu">
-            <ul class="flex space-x-6">
-                <li><a href="#section1" class="text-gray-600 hover:text-gray-900">Inicio</a></li>
-                <li><a href="#section2" class="text-gray-600 hover:text-gray-900">Sobre</a></li>
-                <li><a href="#section3" class="text-gray-600 hover:text-gray-900">Perguntas</a></li>
-                <li><a href="#galeria" class="text-gray-600 hover:text-gray-900">Galeria</a></li>
-                <li><a href="#section5" class="text-gray-600 hover:text-gray-900">Serviços</a></li>
-                <li><a href="#section6" class="text-gray-600 hover:text-gray-900">Contactos</a></li>
+        <!-- Hamburger Icon for Mobile -->
+        <div id="hamburger" class="md:hidden cursor-pointer" onclick="toggleMenu()">
+            <svg class="w-6 h-6 text-neutral-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </div>
+        <!-- Menu for Desktop -->
+        <div id="desktop-menu" class="hidden md:flex md:items-center md:space-x-6">
+            <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                <li><a href="#section1" class="text-orange-500 hover:text-orange-700 text-xl">Inicio</a></li>
+                <li><a href="#section2" class="text-orange-500 hover:text-orange-700 text-xl">Sobre</a></li>
+                <li><a href="#section3" class="text-orange-500 hover:text-orange-700 text-xl">Portfolio</a></li>
+                <li><a href="#section4" class="text-orange-500 hover:text-orange-700 text-xl">Adote um amigo</a></li>
+                <li><a href="#section5" class="text-orange-500 hover:text-orange-700 text-xl">Contactos</a></li>
             </ul>
         </div>
     </div>
-    <!-- Restante do conteúdo -->
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="md:hidden hidden fixed top-16 left-0 w-full bg-white z-40 shadow-lg">
+        <ul class="flex flex-col space-y-4 p-6">
+            <li><a href="#section1" class="text-orange-500 hover:text-orange-700" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="#section2" class="text-orange-500 hover:text-orange-700" onclick="toggleMenu()">Sobre</a></li>
+            <li><a href="#section3" class="text-orange-500 hover:text-orange-700" onclick="toggleMenu()">Portfolio</a></li>
+            <li><a href="#section4" class="text-orange-500 hover:text-orange-700" onclick="toggleMenu()">Adote um amigo</a></li>
+            <li><a href="#section5" class="text-orange-500 hover:text-orange-700" onclick="toggleMenu()">Contactos</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Section 1: Fullscreen Logo -->
+        <section id="section1" class="h-screen flex items-center justify-center">
+            <div class="w-full h-full bg-cover bg-center" style="background-image: url('/images/logo.gif');"></div>
+        </section>
+
+        <!-- Section 2: Grid Horizontal -->
+        <section id="section2" class="min-h-screen flex items-center justify-center p-6 bg-neutral-100">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Left Side: Photo -->
+                    <div class="flex items-center justify-center">
+                        <img src="/images/2.jpeg" alt="Project Photo" class="w-auto h-auto rounded-lg shadow-lg">
+                    </div>
+                    <!-- Right Side: Description -->
+                    <div class="flex items-center justify-center">
+                        <div class="text-center md:text-left">
+                            <!-- Box 1: Título e Subtítulo -->
+                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
+                                <h2 class="text-5xl font-bold mb-4 text-white">Mary Pets Photography</h2>
+                                <h4 class="text-xl font-semibold text-orange-500">A Captura do Amor Entre Humanos e Animais</h4>
+                            </div>
+
+                            <!-- Box 2: Descrição -->
+                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
+                                <p class="text-gray-300 justify-evenly">
+                                    Bem-vindo à <b class="text-white">Mary Pets Photography</b>, um estúdio especializado em retratar a conexão única entre você e seus animais de estimação. 
+                                    Sabemos que os pets são mais do que simples companheiros – são parte da família, trazendo amor, alegria e momentos inesquecíveis para nossas vidas. 
+                                    Nossa missão é transformar essa relação especial em imagens autênticas e atemporais.
+                                </p>
+                            </div>
+
+                            <!-- Box 3: O que fazemos -->
+                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
+                                <h4 class="text-xl font-semibold text-orange-500 mb-4">O que fazemos</h4>
+                                <p class="text-gray-300">
+                                    Oferecemos sessões fotográficas profissionais que capturam a essência da sua relação com seu pet. 
+                                    Seja um retrato clássico, uma sessão espontânea ou um editorial criativo, garantimos imagens que refletem o carinho e a personalidade única do seu animal.
+                                </p>
+                            </div>
+
+                            <!-- Box 4: Nossos principais serviços -->
+                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
+                                <h4 class="text-xl font-semibold text-orange-500 mb-4">Nossos principais serviços incluem:</h4>
+                                <ul class="text-gray-300 list-disc list-inside">
+                                    <li><b class="text-white">Retratos Profissionais de Pets</b> – Imagens sofisticadas que destacam a beleza e a personalidade do seu pet.</li>
+                                    <li><b class="text-white">Sessões Fotográficas com Tutores</b> – Porque cada vínculo merece ser eternizado.</li>
+                                    <li><b class="text-white">Fotografia Artística em Preto e Branco</b> – Para capturar emoções de forma elegante e atemporal.</li>
+                                    <li><b class="text-white">Sessões em Estúdio ou Ambiente Externo</b> – Para atender ao estilo e conforto do seu pet.</li>
+                                    <li><b class="text-white">Ensaios Temáticos e Comerciais</b> – Para campanhas, editoriais e projetos especiais.</li>
+                                </ul>
+                            </div>
+
+                            <!-- Box 5: Por Que Escolher a Mary Pets Photography? -->
+                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
+                                <h4 class="text-xl font-semibold text-orange-500 mb-4">Por Que Escolher a Mary Pets Photography?</h4>
+                                <p class="text-gray-300">
+                                    <b class="text-white">Paixão por Animais</b> – Amamos e respeitamos cada pet, garantindo um ambiente seguro e confortável.
+                                </p>
+                                <p class="text-gray-300">
+                                    <b class="text-white">Qualidade Profissional</b> – Utilizamos técnicas avançadas e equipamentos de ponta para resultados impecáveis.
+                                </p>
+                                <p class="text-gray-300">
+                                    <b class="text-white">Experiência e Sensibilidade</b> – Entendemos o comportamento animal, permitindo capturas espontâneas e naturais.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Portfolio -->
+        <section id="section3" class="min-h-screen flex items-center justify-center p-6 bg-neutral-300">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Portfolio</h2>
+                <!-- Custom Grid Layout -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- First Row: 3 Photos -->
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/3.jpeg" alt="Photo 1" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/4.jpeg" alt="Photo 2" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/5.jpeg" alt="Photo 3" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+
+                    <!-- Second Row: 4 Photos -->
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/6.jpeg" alt="Photo 4" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/7.jpeg" alt="Photo 5" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/8.jpeg" alt="Photo 6" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/9.jpeg" alt="Photo 7" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+
+                    <!-- Third Row: 4 Photos -->
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/10.jpeg" alt="Photo 8" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/11.jpeg" alt="Photo 9" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/12.jpeg" alt="Photo 10" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <img src="/images/13.jpeg" alt="Photo 11" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Animals for Adoption -->
+        <section id="section4" class="min-h-screen flex items-center justify-center p-6 bg-neutral-100">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Adote um amigo</h2>
+                <!-- Single Grid for All Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal1.jpg" alt="Animal 1" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Rex</h3>
+                            <p class="text-gray-700">
+                                Rex é um cão muito brincalhão e adora crianças. Está à procura de um lar amoroso.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal2.jpg" alt="Animal 2" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Luna</h3>
+                            <p class="text-gray-700">
+                                Luna é uma gata calma e carinhosa. Ideal para quem procura um companheiro tranquilo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal3.jpg" alt="Animal 3" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Max</h3>
+                            <p class="text-gray-700">
+                                Max é um cachorro cheio de energia. Adora passeios e brincadeiras ao ar livre.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal4.jpg" alt="Animal 4" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Bella</h3>
+                            <p class="text-gray-700">
+                                Bella é uma cadela muito dócil e adora receber carinho. Perfeita para famílias.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal1.jpg" alt="Animal 1" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Rex</h3>
+                            <p class="text-gray-700">
+                                Rex é um cão muito brincalhão e adora crianças. Está à procura de um lar amoroso.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal2.jpg" alt="Animal 2" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Luna</h3>
+                            <p class="text-gray-700">
+                                Luna é uma gata calma e carinhosa. Ideal para quem procura um companheiro tranquilo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal3.jpg" alt="Animal 3" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Max</h3>
+                            <p class="text-gray-700">
+                                Max é um cachorro cheio de energia. Adora passeios e brincadeiras ao ar livre.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal4.jpg" alt="Animal 4" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Bella</h3>
+                            <p class="text-gray-700">
+                                Bella é uma cadela muito dócil e adora receber carinho. Perfeita para famílias.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal1.jpg" alt="Animal 1" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Rex</h3>
+                            <p class="text-gray-700">
+                                Rex é um cão muito brincalhão e adora crianças. Está à procura de um lar amoroso.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 10 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal2.jpg" alt="Animal 2" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Luna</h3>
+                            <p class="text-gray-700">
+                                Luna é uma gata calma e carinhosa. Ideal para quem procura um companheiro tranquilo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card 11 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                        <img src="/images/animal3.jpg" alt="Animal 3" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="text-xl font-bold mb-2">Max</h3>
+                            <p class="text-gray-700">
+                                Max é um cachorro cheio de energia. Adora passeios e brincadeiras ao ar livre.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!-- Section 5: Contact Information -->
+        <section id="section5" class="min-h-screen flex items-center justify-center p-6 bg-neutral-300">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Contactos</h2>
+                <h4 class="text-xl font-semibold text-orange-500 mb-4 text-center">
+                    Cada imagem conta uma história. Deixe-nos contar a sua!
+                </h4>
+                <p class="text-gray-700 text-center mb-8">
+                    Agende sua sessão agora e eternize momentos inesquecíveis com seu pet.
+                </p>
+
+                <!-- Grid Layout for Contact Info and Form -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Left Side: Contact Information -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Informações de Contacto</h3>
+                        <!-- Contact Details -->
+                        <div class="space-y-4">
+                            <!-- Email -->
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-envelope text-2xl text-orange-500"></i>
+                                <div>
+                                    <p class="text-gray-700 font-semibold">Email</p>
+                                    <a href="mailto:marypets@gmail.com" class="text-gray-600 hover:text-orange-500">marypets@gmail.com</a>
+                                </div>
+                            </div>
+                            <!-- Phone -->
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-phone text-2xl text-orange-500"></i>
+                                <div>
+                                    <p class="text-gray-700 font-semibold">Telefone</p>
+                                    <a href="tel:+351913356345" class="text-gray-600 hover:text-orange-500">+351 913 356 345</a>
+                                </div>
+                            </div>
+                            <!-- Instagram -->
+                            <div class="flex items-center gap-4">
+                                <i class="fab fa-instagram text-2xl text-orange-500"></i>
+                                <div>
+                                    <p class="text-gray-700 font-semibold">Instagram</p>
+                                    <a href="https://www.instagram.com/marypetsphotography" class="text-gray-600 hover:text-orange-500">@marypetsphotography</a>
+                                </div>
+                            </div>
+                            <!-- Website -->
+                            <div class="flex items-center gap-4">
+                                <i class="fas fa-globe text-2xl text-orange-500"></i>
+                                <div>
+                                    <p class="text-gray-700 font-semibold">Website</p>
+                                    <a href="https://www.marypetsphotography.pt" class="text-gray-600 hover:text-orange-500">www.marypetsphotography.pt</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Side: Contact Form -->
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <h3 class="text-2xl font-bold mb-4 text-gray-800">Envie-nos uma Mensagem</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <!-- Name -->
+                            <div>
+                                <label for="name" class="block text-gray-700 font-semibold mb-2">Nome Completo</label>
+                                <input type="text" id="name" name="name" placeholder="Seu nome" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                            </div>
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Seu email" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500" required>
+                            </div>
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-gray-700 font-semibold mb-2">Mensagem</label>
+                                <textarea id="message" name="message" rows="4" placeholder="Escreva sua mensagem" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-orange-500" required></textarea>
+                            </div>
+                            <!-- Submit Button -->
+                            <div>
+                                <button type="submit" class="w-full px-6 py-2 bg-neutral-600 text-white rounded-lg hover:bg-orange-500 transition duration-300">
+                                    Enviar Mensagem
+                                </button>
+                            </div>
+                        </form>
+                        <!-- Mensagem de sucesso/erro -->
+                        <div id="formMessage" class="mt-4 text-center hidden"></div>
+                    </div>
+
+                    <!-- Script para enviar o formulário -->
+                    <script>
+                        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+                            e.preventDefault(); // Evita o recarregamento da página
+
+                            // Captura os dados do formulário
+                            const formData = new FormData(e.target);
+                            const data = Object.fromEntries(formData);
+
+                            // Envia os dados via fetch
+                            try {
+                                const response = await fetch('/contact', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify(data),
+                                });
+
+                                if (response.ok) {
+                                    // Exibe mensagem de sucesso
+                                    document.getElementById('formMessage').textContent = 'Mensagem enviada com sucesso!';
+                                    document.getElementById('formMessage').classList.remove('hidden');
+                                    document.getElementById('formMessage').classList.add('text-green-600');
+                                    e.target.reset(); // Limpa o formulário
+                                } else {
+                                    // Exibe mensagem de erro
+                                    document.getElementById('formMessage').textContent = 'Erro ao enviar a mensagem. Tente novamente.';
+                                    document.getElementById('formMessage').classList.remove('hidden');
+                                    document.getElementById('formMessage').classList.add('text-red-600');
+                                }
+                            } catch (error) {
+                                console.error('Erro:', error);
+                                document.getElementById('formMessage').textContent = 'Erro ao enviar a mensagem. Tente novamente.';
+                                document.getElementById('formMessage').classList.remove('hidden');
+                                document.getElementById('formMessage').classList.add('text-red-600');
+                            }
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </section>
+    
+    </main>
+    <!-- Footer -->
+    <footer class="bg-neutral-800 text-white text-center py-4 mt-auto">
+        &copy; 2025 Marypets. Todos os direitos reservados.
+    </footer>
 </body>
 </html>
-

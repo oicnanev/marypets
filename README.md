@@ -156,6 +156,22 @@ Para deploy, você pode usar serviços como Heroku, Vercel, ou Netlify. Certifiq
 }
 ```
 
+### 9. NodeMailer
+
+Usar o Gmail com Nodemailer
+
+- Ativar a autenticação de dois fatores (se ainda não tiver).
+- Gerar uma senha de app:
+- Aceder Google Account Security.
+- Em "Senhas de app", clicar em "Selecionar app" e escolher "Outro (Nome personalizado)".
+- Dar um nome à senha (por exemplo, "Nodemailer") e clicar em "Gerar".
+- Usar essa senha no campo pass do Nodemailer.
+
+Na máquina ou serviço em que ficar o website criar um ficheiro `.env`com os campos:
+
+- EMAIL_USER
+- EMAIL_PASS
+
 ### Conclusão
 
 Com esses passos, você terá um site funcional usando Node.js para o backend e Tailwind CSS para a estilização. A adaptação do HTML para usar classes do Tailwind pode ser trabalhosa, mas o resultado será um site moderno e responsivo.

@@ -13,7 +13,9 @@
   "type": "commonjs",
   "dependencies": {
     "autoprefixer": "^10.4.21",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "nodemailer": "^6.10.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.15"
   },
