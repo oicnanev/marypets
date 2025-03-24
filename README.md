@@ -1,12 +1,13 @@
 # marypets
 
+![logo1](assets/logo1.gif)
 
 ### 1. Estrutura do Projeto
 
 Primeiro, crie a estrutura do projeto:
 
 ```
-meu-site/
+marypets/
 │
 ├── public/
 │   ├── css/
