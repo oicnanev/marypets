@@ -2,3 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+    --color-mygray: #828282;
+}
