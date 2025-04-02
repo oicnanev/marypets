@@ -5,3 +5,33 @@
 @theme {
     --color-mygray: #828282;
 }
+
+/* Estilos para a lightbox */
+.glightbox-clean .gslide-description {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.glightbox-clean .gslide-title {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.glightbox-clean .gslide-desc {
+    color: #ccc;
+}
+
+.glightbox-clean .gclose {
+    border: 2px solid #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    right: 20px;
+}
+
+.glightbox-clean .gnext, .glightbox-clean .gprev {
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}

@@ -38,3 +38,15 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
         document.getElementById('formMessage').classList.add('text-red-600');
     }
 });
+
+// Inicializa a lightbox
+document.addEventListener('DOMContentLoaded', function() {
+    const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        autoplayVideos: false,
+        moreText: 'Ver mais',
+        moreLength: 60,
+        closeOnOutsideClick: true
+    });
+});

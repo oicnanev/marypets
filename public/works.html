@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outros Trabalhos - Marypets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <script src="/js/marypets.js" defer></script>
+</head>
+<body class="flex flex-col min-h-screen bg-neutral-100">
+    <!-- Header with Menu (igual ao index.html) -->
+    <div id="header" class="fixed top-0 left-0 w-full bg-neutral-800 bg-opacity-80 z-50 flex items-center justify-between px-6 py-1 shadow-md">
+        <!-- Logo -->
+        <div id="logo">
+            <a href="/index.html">
+                <img src="/images/logo-static.png" alt="Marypets Logo" class="h-8 md:h-10">
+            </a>
+        </div>
+        <!-- Hamburger Icon for Mobile -->
+        <div id="hamburger" class="md:hidden cursor-pointer" onclick="toggleMenu()">
+            <svg class="w-6 h-6 text-neutral-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </div>
+        <!-- Menu for Desktop -->
+        <div id="desktop-menu" class="hidden md:flex md:items-center md:space-x-6">
+            <ul class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
+                <li><a href="/index.html" class="text-gray-300 hover:text-gray-100 text-xl">Inicio</a></li>
+                <li><a href="/index.html#section2" class="text-gray-300 hover:text-gray-100 text-xl">Sobre</a></li>
+                <li><a href="/index.html#section3" class="text-gray-300 hover:text-gray-100 text-xl">Portfolio</a></li>
+                <li><a href="/index.html#section4" class="text-gray-300 hover:text-gray-100 text-xl">Adote um amigo</a></li>
+                <li><a href="/works.html" class="text-orange-500 hover:text-orange-300 text-xl">Outros Trabalhos</a></li>
+                <li><a href="/index.html#section5" class="text-gray-300 hover:text-gray-100 text-xl">Contactos</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="md:hidden hidden fixed top-16 left-0 w-full bg-neutral-500 z-40 shadow-lg">
+        <ul class="flex flex-col space-y-4 p-6">
+            <li><a href="/index.html" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Inicio</a></li>
+            <li><a href="/index.html#section2" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Sobre</a></li>
+            <li><a href="/index.html#section3" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Portfolio</a></li>
+            <li><a href="/index.html#section4" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Adote um amigo</a></li>
+            <li><a href="/works.html" class="text-orange-500 hover:text-orange-300 text-xl font-semibold" onclick="toggleMenu()">Outros Trabalhos</a></li>
+            <li><a href="/index.html#section5" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Contactos</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+        <!-- Seção Casual -->
+        <section class="py-12 px-6 bg-neutral-200">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-center text-neutral-800">Casual</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Foto 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/casual1.jpg" class="glightbox" data-gallery="casual">
+                            <img src="/images/casual1.jpg" alt="Casual 1" class="w-full h-64 object-cover">
+                        </a>                       
+                    </div>
+                    <!-- Foto 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/casual2.jpg" class="glightbox" data-gallery="casual">
+                            <img src="/images/casual2.jpg" alt="Casual 2" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <!-- Foto 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/casual3.jpg" class="glightbox" data-gallery="casual">
+                            <img src="/images/casual3.jpg" alt="Casual 3" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <!-- Foto 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/casual4.jpg" class="glightbox" data-gallery="casual">
+                            <img src="/images/casual4.jpg" alt="Casual 4" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Empresarial -->
+        <section class="py-12 px-6 bg-neutral-300">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-center text-neutral-800">Empresarial</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+                    <!-- Foto 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/empresarial1.jpg" class="glightbox" data-gallery="empresarial">
+                            <img src="/images/empresarial1.jpg" alt="Empresarial 1" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <!-- Foto 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/empresarial2.jpg" class="glightbox" data-gallery="empresarial">
+                            <img src="/images/empresarial2.jpg" alt="Empresarial 2" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <!-- Foto 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/empresarial3.jpg" class="glightbox" data-gallery="empresarial">
+                            <img src="/images/empresarial3.jpg" alt="Empresarial 3" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <!-- Foto 4 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/empresarial4.jpg" class="glightbox" data-gallery="empresarial">
+                            <img src="/images/empresarial4.jpg" alt="Empresarial 4" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Desportiva -->
+        <section class="py-12 px-6 bg-neutral-200">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-center text-neutral-800">Desportiva</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva1.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva1.jpg" alt="Desportiva 1" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva2.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva2.jpg" alt="Desportiva 2" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva3.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva3.jpg" alt="Desportiva 3" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva4.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva4.jpg" alt="Desportiva 4" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva5.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva5.jpg" alt="Desportiva 5" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva6.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva6.jpg" alt="Desportiva 6" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva7.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva7.jpg" alt="Desportiva 7" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva8.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva8.jpg" alt="Desportiva 8" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva9.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva9.jpg" alt="Desportiva 9" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva10.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva10.jpg" alt="Desportiva 10" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva11.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva11.jpg" alt="Desportiva 11" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                        <a href="/images/desportiva12.jpg" class="glightbox" data-gallery="desportiva">
+                            <img src="/images/desportiva12.jpg" alt="Desportiva 12" class="w-full h-64 object-cover">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-800 text-white text-center py-4 mt-auto">
+        &copy; 2025 Marypets. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
