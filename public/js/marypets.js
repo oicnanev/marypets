@@ -39,14 +39,33 @@ document.getElementById('contactForm').addEventListener('submit', async (e) => {
     }
 });
 
-// Inicializa a lightbox
-document.addEventListener('DOMContentLoaded', function() {
+// Configuração da Lightbox
+function initLightbox() {
     const lightbox = GLightbox({
+        selector: '.glightbox',
         touchNavigation: true,
+        keyboardNavigation: true,
+        closeButton: true,
         loop: true,
-        autoplayVideos: false,
+        zoomable: true,
+        draggable: true,
+        openEffect: 'fade',
+        closeEffect: 'fade',
+        slideEffect: 'slide',
         moreText: 'Ver mais',
-        moreLength: 60,
-        closeOnOutsideClick: true
+        descPosition: 'bottom',
+        onOpen: () => {
+            document.body.style.overflow = 'hidden';
+        },
+        onClose: () => {
+            document.body.style.overflow = 'auto';
+        }
     });
-});
+}
+
+// Inicializa quando o DOM estiver pronto
+if (document.readyState === 'complete') {
+    initLightbox();
+} else {
+    window.addEventListener('load', initLightbox);
+}
