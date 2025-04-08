@@ -4,38 +4,48 @@ function toggleMenu() {
     menu.classList.toggle('hidden');
 }
 
-document.getElementById('contactForm').addEventListener('submit', async (e) => {
-    e.preventDefault(); // Evita o recarregamento da página
+// Adicione isso no seu marypets.js
+document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const messageDiv = document.getElementById('formMessage');
 
-    // Captura os dados do formulário
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData);
-
-    // Envia os dados via fetch
     try {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Enviando...';
+
         const response = await fetch('/contact', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: formData.get('name'),
+                email: formData.get('email'),
+                message: formData.get('message')
+            })
         });
 
+        const result = await response.text();
+        
+        messageDiv.textContent = response.ok ? 'Mensagem enviada com sucesso!' : 'Erro ao enviar mensagem';
+        messageDiv.className = response.ok ? 'mt-4 text-center text-green-600' : 'mt-4 text-center text-red-600';
+        messageDiv.classList.remove('hidden');
+        
         if (response.ok) {
-            // Exibe mensagem de sucesso
-            document.getElementById('formMessage').textContent = 'Mensagem enviada com sucesso!';
-            document.getElementById('formMessage').classList.remove('hidden');
-            document.getElementById('formMessage').classList.add('text-green-600');
-            e.target.reset(); // Limpa o formulário
-        } else {
-            // Exibe mensagem de erro
-            document.getElementById('formMessage').textContent = 'Erro ao enviar a mensagem. Tente novamente.';
-            document.getElementById('formMessage').classList.remove('hidden');
-            document.getElementById('formMessage').classList.add('text-red-600');
+            form.reset();
         }
     } catch (error) {
-        console.error('Erro:', error);
-        document.getElementById('formMessage').textContent = 'Erro ao enviar a mensagem. Tente novamente.';
-        document.getElementById('formMessage').classList.remove('hidden');
-        document.getElementById('formMessage').classList.add('text-red-600');
+        console.error('Error:', error);
+        messageDiv.textContent = 'Erro ao enviar mensagem';
+        messageDiv.className = 'mt-4 text-center text-red-600';
+        messageDiv.classList.remove('hidden');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Enviar Mensagem';
     }
 });
 
@@ -63,36 +73,6 @@ function initLightbox() {
     });
 }
 
-// Story overlay functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const storyTrigger = document.getElementById('story-trigger');
-    const storyOverlay = document.getElementById('story-overlay');
-    const closeButton = document.getElementById('close-story');
-
-    if (storyTrigger && storyOverlay) {
-        storyTrigger.addEventListener('click', function() {
-            storyOverlay.classList.remove('invisible', 'opacity-0');
-            storyOverlay.classList.add('opacity-100');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when overlay is open
-        });
-
-        closeButton.addEventListener('click', function(e) {
-            e.stopPropagation();
-            storyOverlay.classList.add('opacity-0');
-            setTimeout(() => {
-                storyOverlay.classList.add('invisible');
-                document.body.style.overflow = ''; // Restore scrolling
-            }, 300);
-        });
-
-        // Close when clicking outside the text
-        storyOverlay.addEventListener('click', function(e) {
-            if (e.target === storyOverlay) {
-                closeButton.click();
-            }
-        });
-    }
-});
 
 // Inicializa quando o DOM estiver pronto
 if (document.readyState === 'complete') {

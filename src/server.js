@@ -29,27 +29,35 @@ const transporter = nodemailer.createTransport({
 
 // rhpp unyj vvyh wrca
 
-// Rota para processar o formulário de contactos
+// Adicione este middleware antes das rotas
+app.use(express.json());
+
+// Atualize a rota /contact
 app.post('/contact', (req, res) => {
     const { name, email, message } = req.body;
 
-    // Configuração do email
+    if (!name || !email || !message) {
+        return res.status(400).send('Todos os campos são obrigatórios');
+    }
+
     const mailOptions = {
-        from: process.env.EMAIL_USER, // Email do remetente
-        to: 'venancio.gnr@gmail.com',//'marypetsphotography@gmail.com', // Email do destinatário
-        subject: 'Marypets website', // Assunto do email
-        text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`, // Corpo do email
+        from: process.env.EMAIL_USER,
+        to: 'marypetsphotography@gmail.com',
+        subject: 'Novo contato do site Marypets',
+        html: `
+            <h2>Novo contato recebido</h2>
+            <p><strong>Nome:</strong> ${name}</p>
+            <p><strong>Email:</strong> ${email}</p>
+            <p><strong>Mensagem:</strong> ${message}</p>
+        `
     };
 
-    // Envia o email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             console.error('Erro ao enviar email:', error);
-            res.status(500).send('Erro ao enviar a mensagem.');
-        } else {
-            console.log('Email enviado:', info.response);
-            res.status(200).send('Mensagem enviada com sucesso!');
+            return res.status(500).json({ error: 'Erro ao enviar mensagem' });
         }
+        res.status(200).json({ message: 'Mensagem enviada com sucesso!' });
     });
 });
 
