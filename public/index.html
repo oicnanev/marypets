@@ -62,63 +62,93 @@
             </div>
         </section>
 
-        <!-- Section 2: Grid Horizontal -->
-        <section id="section2" class="min-h-screen flex items-center justify-center p-6 bg-neutral-100">
+        <!-- Section 2: Grid Horizontal - Versão Final Ajustada -->
+        <section id="section2" class="min-h-screen flex items-center justify-center p-4 md:p-6 bg-neutral-100">
             <div class="container mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Left Side: Photo -->
-                    <div class="flex items-center justify-center">
-                        <img src="/images/2.jpeg" alt="Project Photo" class="w-auto h-auto rounded-lg shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
+                    <!-- Left Side: Photo Container (tamanho completo) -->
+                    <!--<div class="relative w-full h-[70vh] min-h-[500px]">-->
+                        <div class="relative w-full h-full">
+                        <!-- Photo - tamanho igual ao overlay -->
+                        <img src="/images/2.jpeg" alt="Mary Pets Photography" 
+                            class="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer" 
+                            id="story-trigger">
+                        
+                        <!-- Overlay -->
+                        <div id="story-overlay" class="absolute inset-0 bg-black bg-opacity-70 rounded-lg flex items-center justify-center p-4 md:p-6 opacity-0 invisible transition-all duration-300">
+                            <div class="text-white max-w-md w-full overflow-y-auto p-4" style="max-height: 80%;">
+                                <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">✨ A história de Gucci e Chanel ✨</h3>
+                                <p class="text-base md:text-lg mb-3 md:mb-4">
+                                    Em maio de 2019, numa colônia de gatinhos, nasceram dois irmãos muito especiais. Apesar de serem gémeos, tinham cores diferentes—mas o destino já os tinha unido para sempre.
+                                </p>
+                                <p class="text-base md:text-lg mb-3 md:mb-4">
+                                    Com apenas dois meses, fui buscá-los e, no momento em que me viram, vieram logo ao meu encontro, como se soubessem que o nosso amor estava escrito nas estrelas. 💫
+                                </p>
+                                <p class="text-base md:text-lg mb-3 md:mb-4">
+                                    Desde então, encheram a minha vida de alegria e ronrons. Mas, quando tudo parecia perfeito, o Gucci, o meu pequeno aventureiro cinzento, engoliu fios de um vestido e quase partiu antes do tempo.
+                                </p>
+                                <p class="text-base md:text-lg mb-3 md:mb-4">
+                                    Foram dias de angústia… Ele precisou de uma cirurgia delicada ao estômago e ao intestino, e ficou internado no hospital dos gatos durante uma semana. O medo era enorme, mas ele mostrou que era um verdadeiro guerreiro! 🐾💙
+                                </p>
+                                <p class="text-base md:text-lg">
+                                    Graças a Deus, tudo correu bem! Hoje, o Gucci vive feliz ao lado da sua inseparável Chanel e de mais dois irmãos, formando uma família de quatro patudos cheia de amor. ❤️🐾
+                                </p>
+                                <button id="close-story" class="mt-3 md:mt-4 px-4 py-2 bg-neutral-600 rounded-lg hover:bg-neutral-500 transition">
+                                    Fechar
+                                </button>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Right Side: Description -->
-                    <div class="flex items-center justify-center p-1">
-                        <div class="text-center md:text-left mx-auto">
+                    
+                    <!-- Right Side: Description (texto reduzido) -->
+                    <div class="flex flex-col h-full min-h-[500px] overflow-y-auto">
+                        <div class="text-center md:text-left mx-auto space-y-4 w-full">
                             <!-- Box 1: Título e Subtítulo -->
-                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
-                                <h2 class="text-6xl font-bold mb-4 text-gray-100">Mary Pets Photography</h2>
-                                <h4 class="text-3xl font-semibold text-gray-300">A Captura do Amor Entre Humanos e Animais</h4>
-                                <br>
-                                <p class="text-gray-300 justify-evenly">
+                            <div class="bg-neutral-500 rounded-lg p-4">
+                                <h2 class="text-3xl md:text-4xl font-bold mb-2 text-gray-100">Mary Pets Photography</h2>
+                                <h4 class="text-lg md:text-xl font-semibold text-gray-300">A Captura do Amor Entre Humanos e Animais</h4>
+                                <p class="text-gray-300 text-sm mt-3">
                                     Bem-vindo à <b class="text-gray-100">Mary Pets Photography</b>, um estúdio especializado em retratar a conexão única entre você e seus animais de estimação. 
                                     Sabemos que os pets são mais do que simples companheiros – são parte da família, trazendo amor, alegria e momentos inesquecíveis para nossas vidas. 
                                     Nossa missão é transformar essa relação especial em imagens autênticas e atemporais.
                                 </p>
-                                <br>
                             </div>
 
                             <!-- Box 2: O que fazemos -->
-                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
-                                <h4 class="text-3xl font-semibold text-gray-300 mb-4">O que fazemos?</h4>
-                                <p class="text-gray-300">
+                            <div class="bg-neutral-500 rounded-lg p-4">
+                                <h4 class="text-lg md:text-xl font-semibold text-gray-300 mb-2">O que fazemos?</h4>
+                                <p class="text-gray-300 text-sm">
                                     Oferecemos sessões fotográficas profissionais que capturam a essência da sua relação com seu pet. 
                                     Seja um retrato clássico, uma sessão espontânea ou um editorial criativo, garantimos imagens que refletem o carinho e a personalidade única do seu animal.
                                 </p>
                             </div>
 
                             <!-- Box 3: Nossos principais serviços -->
-                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
-                                <h4 class="text-3xl font-semibold text-gray-300 mb-4">Nossos principais serviços incluem:</h4>
-                                <ul class="text-gray-300 list-disc list-inside">
+                            <div class="bg-neutral-500 rounded-lg p-4">
+                                <h4 class="text-lg md:text-xl font-semibold text-gray-300 mb-2">Nossos serviços:</h4>
+                                <ul class="text-gray-300 text-sm list-disc list-inside space-y-1">
                                     <li><b class="text-gray-100">Retratos Profissionais de Pets</b> – Imagens sofisticadas que destacam a beleza e a personalidade do seu pet.</li>
-                                    <li><b class="text-gray-100">Sessões Fotográficas com Tutores</b> – Porque cada vínculo merece ser eternizado.</li>
-                                    <li><b class="text-gray-100">Fotografia Artística em Preto e Branco</b> – Para capturar emoções de forma elegante e atemporal.</li>
-                                    <li><b class="text-gray-100">Sessões em Estúdio ou Ambiente Externo</b> – Para atender ao estilo e conforto do seu pet.</li>
-                                    <li><b class="text-gray-100">Ensaios Temáticos e Comerciais</b> – Para campanhas, editoriais e projetos especiais.</li>
+                                        <li><b class="text-gray-100">Sessões Fotográficas com Tutores</b> – Porque cada vínculo merece ser eternizado.</li>
+                                        <li><b class="text-gray-100">Fotografia Artística em Preto e Branco</b> – Para capturar emoções de forma elegante e atemporal.</li>
+                                        <li><b class="text-gray-100">Sessões em Estúdio ou Ambiente Externo</b> – Para atender ao estilo e conforto do seu pet.</li>
+                                        <li><b class="text-gray-100">Ensaios Temáticos e Comerciais</b> – Para campanhas, editoriais e projetos especiais.</li>
                                 </ul>
                             </div>
 
-                            <!-- Box 4: Por Que Escolher a Mary Pets Photography? -->
-                            <div class="bg-neutral-500 rounded-lg p-6 mb-6">
-                                <h4 class="text-3xl font-semibold text-gray-300 mb-4">Por Que Escolher a Mary Pets Photography?</h4>
-                                <p class="text-gray-300">
-                                    <b class="text-gray-100">Paixão por Animais</b> – Amamos e respeitamos cada pet, garantindo um ambiente seguro e confortável.
-                                </p>
-                                <p class="text-gray-300">
-                                    <b class="text-gray-100">Qualidade Profissional</b> – Utilizamos técnicas avançadas e equipamentos de ponta para resultados impecáveis.
-                                </p>
-                                <p class="text-gray-300">
-                                    <b class="text-gray-100">Experiência e Sensibilidade</b> – Entendemos o comportamento animal, permitindo capturas espontâneas e naturais.
-                                </p>
+                            <!-- Box 4: Por que escolher -->
+                            <div class="bg-neutral-500 rounded-lg p-4">
+                                <h4 class="text-lg md:text-xl font-semibold text-gray-300 mb-2">Por que nos escolher?</h4>
+                                <div class="text-gray-300 text-sm space-y-1">
+                                    <p class="text-gray-300">
+                                        <b class="text-gray-100">Paixão por Animais</b> – Amamos e respeitamos cada pet, garantindo um ambiente seguro e confortável.
+                                    </p>
+                                    <p class="text-gray-300">
+                                        <b class="text-gray-100">Qualidade Profissional</b> – Utilizamos técnicas avançadas e equipamentos de ponta para resultados impecáveis.
+                                    </p>
+                                    <p class="text-gray-300">
+                                        <b class="text-gray-100">Experiência e Sensibilidade</b> – Entendemos o comportamento animal, permitindo capturas espontâneas e naturais.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -131,7 +161,7 @@
             <div class="container mx-auto">
                 <h2 class="text-3xl font-bold mb-8 text-center">Portfolio</h2>
                 <!-- Custom Grid Layout -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 items-center">
                     <!-- First Row: 3 Photos -->
                     <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
                         <a href="/images/3.jpeg" class="glightbox" data-gallery="portfolio">
@@ -139,30 +169,30 @@
                         </a>
                     </div>
                     <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
-                        <a href="/images/4.jpeg" class="glightbox" data-gallery="portfolio">
-                            <img src="/images/4.jpeg" alt="Photo 2" class="w-full h-auto rounded-lg shadow-lg">
+                        <a href="/images/7.jpeg" class="glightbox" data-gallery="portfolio">
+                            <img src="/images/7.jpeg" alt="Photo 2" class="w-full h-auto rounded-lg shadow-lg">
                         </a>
                     </div>
                     <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
-                        <a href="/images/5.jpeg" class="glightbox" data-gallery="portfolio">
-                            <img src="/images/5.jpeg" alt="Photo 3" class="w-full h-auto rounded-lg shadow-lg">
+                        <a href="/images/6.jpeg" class="glightbox" data-gallery="portfolio">
+                            <img src="/images/6.jpeg" alt="Photo 3" class="w-full h-auto rounded-lg shadow-lg">
                         </a>
                     </div>
 
                     <!-- Second Row: 4 Photos -->
                     <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
-                        <a href="/images/6.jpeg" class="glightbox" data-gallery="portfolio">
-                            <img src="/images/6.jpeg" alt="Photo 4" class="w-full h-auto rounded-lg shadow-lg">
-                        </a>
-                    </div>
-                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
-                        <a href="/images/7.jpeg" class="glightbox" data-gallery="portfolio">
-                            <img src="/images/7.jpeg" alt="Photo 5" class="w-full h-auto rounded-lg shadow-lg">
-                        </a>
-                    </div>
-                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
                         <a href="/images/8.jpeg" class="glightbox" data-gallery="portfolio">
-                            <img src="/images/8.jpeg" alt="Photo 6" class="w-full h-auto rounded-lg shadow-lg">
+                            <img src="/images/8.jpeg" alt="Photo 4" class="w-full h-auto rounded-lg shadow-lg">
+                        </a>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <a href="/images/13.jpeg" class="glightbox" data-gallery="portfolio">
+                            <img src="/images/13.jpeg" alt="Photo 5" class="w-full h-auto rounded-lg shadow-lg">
+                        </a>
+                    </div>
+                    <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
+                        <a href="/images/11.jpeg" class="glightbox" data-gallery="portfolio">
+                            <img src="/images/11.jpeg" alt="Photo 6" class="w-full h-auto rounded-lg shadow-lg">
                         </a>
                     </div>
                     <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
@@ -178,8 +208,8 @@
                         </a>
                     </div>
                     <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
-                        <a href="/images/11.jpeg" class="glightbox" data-gallery="portfolio">
-                            <img src="/images/11.jpeg" alt="Photo 9" class="w-full h-auto rounded-lg shadow-lg">
+                        <a href="/images/4.jpeg" class="glightbox" data-gallery="portfolio">
+                            <img src="/images/4.jpeg" alt="Photo 9" class="w-full h-auto rounded-lg shadow-lg">
                         </a>
                     </div>
                     <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
@@ -188,8 +218,8 @@
                         </a>
                     </div>
                     <div class="sm:col-span-1 md:col-span-1 lg:col-span-1">
-                        <a href="/images/13.jpeg" class="glightbox" data-gallery="portfolio">
-                            <img src="/images/13.jpeg" alt="Photo 11" class="w-full h-auto rounded-lg shadow-lg">
+                        <a href="/images/5.jpeg" class="glightbox" data-gallery="portfolio">
+                            <img src="/images/5.jpeg" alt="Photo 11" class="w-full h-auto rounded-lg shadow-lg">
                         </a>
                     </div>
                 </div>

@@ -63,6 +63,37 @@ function initLightbox() {
     });
 }
 
+// Story overlay functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const storyTrigger = document.getElementById('story-trigger');
+    const storyOverlay = document.getElementById('story-overlay');
+    const closeButton = document.getElementById('close-story');
+
+    if (storyTrigger && storyOverlay) {
+        storyTrigger.addEventListener('click', function() {
+            storyOverlay.classList.remove('invisible', 'opacity-0');
+            storyOverlay.classList.add('opacity-100');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling when overlay is open
+        });
+
+        closeButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            storyOverlay.classList.add('opacity-0');
+            setTimeout(() => {
+                storyOverlay.classList.add('invisible');
+                document.body.style.overflow = ''; // Restore scrolling
+            }, 300);
+        });
+
+        // Close when clicking outside the text
+        storyOverlay.addEventListener('click', function(e) {
+            if (e.target === storyOverlay) {
+                closeButton.click();
+            }
+        });
+    }
+});
+
 // Inicializa quando o DOM estiver pronto
 if (document.readyState === 'complete') {
     initLightbox();

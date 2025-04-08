@@ -36,7 +36,7 @@ app.post('/contact', (req, res) => {
     // Configuração do email
     const mailOptions = {
         from: process.env.EMAIL_USER, // Email do remetente
-        to: 'marypets@gmail.com', // Email do destinatário
+        to: 'venancio.gnr@gmail.com',//'marypetsphotography@gmail.com', // Email do destinatário
         subject: 'Marypets website', // Assunto do email
         text: `Nome: ${name}\nEmail: ${email}\nMensagem: ${message}`, // Corpo do email
     };
