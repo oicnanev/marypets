@@ -4,6 +4,36 @@ function toggleMenu() {
     menu.classList.toggle('hidden');
 }
 
+// Story overlay functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const storyTrigger = document.getElementById('story-trigger');
+    const storyOverlay = document.getElementById('story-overlay');
+    const closeStory = document.getElementById('close-story');
+
+    if (storyTrigger && storyOverlay) {
+        storyTrigger.addEventListener('click', function() {
+            storyOverlay.classList.remove('invisible', 'opacity-0');
+            storyOverlay.classList.add('opacity-100', 'visible');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeStory.addEventListener('click', function(e) {
+            e.stopPropagation();
+            storyOverlay.classList.remove('opacity-100', 'visible');
+            storyOverlay.classList.add('opacity-0', 'invisible');
+            document.body.style.overflow = 'auto';
+        });
+
+        storyOverlay.addEventListener('click', function(e) {
+            if (e.target === storyOverlay) {
+                storyOverlay.classList.remove('opacity-100', 'visible');
+                storyOverlay.classList.add('opacity-0', 'invisible');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    }
+});
+
 // Adicione isso no seu marypets.js
 document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
     e.preventDefault();
