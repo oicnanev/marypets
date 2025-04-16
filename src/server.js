@@ -27,7 +27,15 @@ const transporter = nodemailer.createTransport({
         user: process.env.EMAIL_USER, // Email do remetente
         pass: process.env.EMAIL_PASS, // Senha do remetente
     },
+    tls: {
+        rejectUnauthorized: false,
+    },
 });
+
+transporter.verify((error) => {
+    if (error) console.error('Erro SMTP:', error);
+    else console.log('SMTP configurado com sucesso!');
+  });
 
 // DEBUG ----------------------------------------------------
 console.log('Variáveis de ambiente carregadas:', {

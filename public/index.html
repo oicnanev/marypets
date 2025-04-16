@@ -33,7 +33,8 @@
                 <li><a href="#section1" class="text-gray-300 hover:text-gray-100 text-xl">Inicio</a></li>
                 <li><a href="#section2" class="text-gray-300 hover:text-gray-100 text-xl">Sobre</a></li>
                 <li><a href="#section3" class="text-gray-300 hover:text-gray-100 text-xl">Portfolio</a></li>
-                <li><a href="#section4" class="text-gray-300 hover:text-gray-100 text-xl">Adote um amigo</a></li>
+                <li><a href="#section4" class="text-gray-300 hover:text-gray-100 text-xl">Sessões Fotográficas</a></li>
+                <li><a href="#section5" class="text-gray-300 hover:text-gray-100 text-xl">Adote um amigo</a></li>
                 <li><a href="/works.html" class="text-gray-300 hover:text-gray-100 text-xl">Outros Trabalhos</a></li>
                 <li><a href="#section5" class="text-gray-300 hover:text-gray-100 text-xl">Contactos</a></li>
             </ul>
@@ -46,7 +47,8 @@
             <li><a href="#section1" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Inicio</a></li>
             <li><a href="#section2" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Sobre</a></li>
             <li><a href="#section3" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Portfolio</a></li>
-            <li><a href="#section4" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Adote um amigo</a></li>
+            <li><a href="#section4" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Sessões Fotográficas</a></li>
+            <li><a href="#section5" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Adote um amigo</a></li>
             <li><a href="/works.html" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Outros Trabalhos</a></li>
             <li><a href="#section5" class="text-gray-300 hover:text-gray-100 text-xl font-semibold" onclick="toggleMenu()">Contactos</a></li>
         </ul>
@@ -229,7 +231,264 @@
             </div>
         </section>
 
-        <!-- Section 4: Animals for Adoption -->
+        <!-- Section 4: Pricing Packages -->
+        <section id="section4" class="min-h-screen flex items-center justify-center p-6 bg-neutral-200">
+            <div class="container mx-auto">
+                <h2 class="text-3xl font-bold mb-8 text-center">Pacotes de Sessões Fotográficas</h2>
+                
+                <!-- Packages Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+                    
+                    <!-- Package 1: Essencial -->
+                    <div class="bg-neutral-100 rounded-lg shadow-lg overflow-hidden">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="/images/package-essential.jpg" alt="Pacote Essencial" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4 text-center">Essencial</h3>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>30 minutos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>1 pet</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>10 fotos digitais editadas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>1 cenário simples</span>
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <span class="text-4xl font-bold">45€</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Package 2: Clássico -->
+                    <div class="bg-neutral-100 rounded-lg shadow-lg overflow-hidden">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="/images/package-classic.avif" alt="Pacote Clássico" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4 text-center">Clássico</h3>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>1 hora</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Até 2 pets</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>20 fotos digitais editadas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>3 cenários</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Mini vídeo</span>
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <span class="text-4xl font-bold">80€</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Package 3: Premium -->
+                    <div class="bg-neutral-100 rounded-lg shadow-lg overflow-hidden">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="/images/package-premium.webp" alt="Pacote Premium" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4 text-center">Premium</h3>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>1h30</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Até 3 pets + tutor(a)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>30 fotos digitais editadas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Mini vídeo</span>
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <span class="text-4xl font-bold">115€</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Package 4: Pet + Família -->
+                    <div class="bg-neutral-100 rounded-lg shadow-lg overflow-hidden">
+                        <div class="aspect-w-1 aspect-h-1">
+                            <img src="/images/package-family.avif" alt="Pacote Pet + Família" class="w-full h-64 object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-4 text-center">Pet + Família</h3>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>2 horas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Pet + família completa</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>40 fotos digitais editadas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Fotos individuais + grupo</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Direção de poses</span>
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <span class="text-4xl font-bold">150€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Couple Package -->
+                <div class="max-w-2xl mx-auto bg-neutral-100 rounded-lg shadow-lg overflow-hidden mb-10">
+                    <div class="md:flex">
+                        <div class="md:w-1/2">
+                            <img src="/images/package-couple.jpg" alt="Pacote Amor de Estimação" class="w-full h-full object-cover">
+                        </div>
+                        <div class="md:w-2/3 p-6">
+                            <h3 class="text-2xl font-bold mb-4">Amor de Estimação</h3>
+                            <p class="text-neutral-700 mb-4">Sessão especial para casais com seus pets - captando o amor em todos os sentidos!</p>
+                            <ul class="space-y-2 mb-6">
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>1h30 de sessão</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Casal + até 2 pets</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>25 fotos digitais editadas</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Fotos individuais e de grupo</span>
+                                </li>
+                            </ul>
+                            <div class="text-center">
+                                <span class="text-4xl font-bold">120€</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Additional Info Sections -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <!-- Travel Fees -->
+                    <div class="bg-neutral-100 rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">Deslocações</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-neutral-600 mr-2">•</span>
+                                <span>Área de Cascais: 15€ adicionais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-neutral-600 mr-2">•</span>
+                                <span>Área de Lisboa: 20€ adicionais</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Extras -->
+                    <div class="bg-neutral-100 rounded-lg shadow-lg p-6">
+                        <h3 class="text-xl font-bold mb-4">Extras</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-neutral-600 mr-2">•</span>
+                                <span>Foto adicional editada: 10€ por foto</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-neutral-600 mr-2">•</span>
+                                <span>Álbum físico (opcional): desde 35€</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-neutral-600 mr-2">•</span>
+                                <span>Pen personalizada: 15€</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Terms & Conditions -->
+                <div class="bg-neutral-100 rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold mb-4">Condições e Informações</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Estes valores são para fotografias com fins não comerciais. Para empresas deve ser previamente acordado os valores.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Em todos os valores está incluído o IVA à taxa em vigor.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Não aceitamos cães com comportamentos agressivos e/ou cadelas durante o período do cio.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Os animais devem estar vacinados, desparasitados e não ser portadores de doenças transmissíveis a outros animais ou humanos.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <ul class="space-y-2">
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>As imagens não podem ser alteradas.</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>Não fazemos manipulações de imagem facial e/ou corporal de pessoas (como emagrecer, pintar cabelos, entre outros).</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-neutral-600 mr-2">•</span>
+                                    <span>O prazo de edição é de 2 a 4 semanas a partir da data da seleção por parte do cliente.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Animals for Adoption -->
         <section id="section4" class="min-h-screen flex items-center justify-center p-6 bg-neutral-100">
             <div class="container mx-auto">
                 <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
