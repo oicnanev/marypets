@@ -1,7 +1,9 @@
-require('dotenv').config(); // Carrega as variáveis de ambiente
+//require('dotenv').config(); // Carrega as variáveis de ambiente
+
 const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../.env') }); // Caminho explícito
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +27,12 @@ const transporter = nodemailer.createTransport({
         user: process.env.EMAIL_USER, // Email do remetente
         pass: process.env.EMAIL_PASS, // Senha do remetente
     },
+});
+
+// DEBUG ----------------------------------------------------
+console.log('Variáveis de ambiente carregadas:', {
+    EMAIL_USER: process.env.EMAIL_USER,
+    EMAIL_PASS: process.env.EMAIL_PASS ? '*** (existe)' : 'Não definida'
 });
 
 // rhpp unyj vvyh wrca

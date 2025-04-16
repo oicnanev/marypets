@@ -62,17 +62,20 @@
             </div>
         </section>
 
-        <!-- Section 2: Grid Horizontal - Versão Final Ajustada -->
+        <!-- Section 2: Grid Horizontal -->
         <section id="section2" class="min-h-screen flex items-center justify-center p-4 md:p-6 bg-neutral-100">
             <div class="container mx-auto">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
                     <!-- Left Side: Photo Container (tamanho completo) -->
-                    <!--<div class="relative w-full h-[70vh] min-h-[500px]">-->
                         <div class="relative w-full h-full">
                         <!-- Photo - tamanho igual ao overlay -->
                         <img src="/images/2.jpeg" alt="Mary Pets Photography" 
                             class="w-full h-full object-cover rounded-lg shadow-lg cursor-pointer" 
                             id="story-trigger">
+                        <!-- Ícone flutuante (exemplo) -->
+                        <div class="absolute bottom-4 right-4 bg-black bg-opacity-80 rounded-full p-2 animate-pulse">
+                            <span class="text-white">✨ Clica na foto ✨</span>
+                        </div>
                         
                         <!-- Overlay -->
                         <div id="story-overlay" class="absolute inset-0 bg-black bg-opacity-70 rounded-lg flex items-center justify-center p-4 md:p-6 opacity-0 invisible transition-all duration-300">
