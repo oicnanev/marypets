@@ -681,6 +681,24 @@ sudo systemctl restart nginx
 - Se a aplicação crasha frequentemente, verifique erros no código (ex: `try/catch` faltando).  
 
 
+🔥 Solução para envio de mensagens através do website: Elastic Email (Grátis)
+Criar conta em elasticemail.com
+
+Configure no seu código:
+
+```javascript
+const transporter = nodemailer.createTransport({
+  host: 'smtp.elasticemail.com',
+  port: 2525,
+  auth: {
+    user: 'seu_email@dominio.com',
+    pass: 'sua_senha_api' // Encontrada em Settings > API
+  }
+});
+```
+
+👉 Permite 100 emails/dia gratuitamente
+
 ### Conclusão
 
 Com esses passos, temos um site funcional usando [Node.js](https://nodejs.org/en) para o backend e [Tailwind CSS](https://tailwindcss.com) para a estilização. No HTML usar classes Tailwind é trabalhoso, mas o resultado é um site moderno e responsivo.
