@@ -1,82 +1,80 @@
-//require('dotenv').config(); // Carrega as variáveis de ambiente
-
 const express = require('express');
 const nodemailer = require('nodemailer');
 const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '../.env') }); // Caminho explícito
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware para processar dados do formulário
+// Middlewares
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Servir arquivos estáticos
 app.use(express.static(path.join(__dirname, '../public')));
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
-// Rota principal
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/index.html'));
-});
 
-// Configuração do Nodemailer
+// Configuração Elastic Email
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: process.env.EMAIL_USER, // Email do remetente
-        pass: process.env.EMAIL_PASS, // Senha do remetente
-    },
-    tls: {
-        rejectUnauthorized: false,
-    },
+  host: 'smtp.elasticemail.com',
+  port: 2525,
+  secure: false,
+  auth: {
+    user: process.env.ELASTIC_EMAIL_USER,
+    pass: process.env.ELASTIC_EMAIL_API_KEY
+  },
+  tls: {
+    rejectUnauthorized: false
+  }
 });
 
+// Verificação da conexão SMTP
 transporter.verify((error) => {
-    if (error) console.error('Erro SMTP:', error);
-    else console.log('SMTP configurado com sucesso!');
-  });
-
-// DEBUG ----------------------------------------------------
-console.log('Variáveis de ambiente carregadas:', {
-    EMAIL_USER: process.env.EMAIL_USER,
-    EMAIL_PASS: process.env.EMAIL_PASS ? '*** (existe)' : 'Não definida'
+  if (error) {
+    console.error('Erro na conexão SMTP:', error);
+  } else {
+    console.log('Conexão SMTP configurada com sucesso');
+  }
 });
 
-// rhpp unyj vvyh wrca
+// Rotas
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
 
-// Adicione este middleware antes das rotas
-app.use(express.json());
+app.post('/contact', async (req, res) => {
+  const { name, email, message } = req.body;
+  
+  if (!name || !email || !message) {
+    return res.status(400).json({ error: 'Todos os campos são obrigatórios' });
+  }
 
-// Atualize a rota /contact
-app.post('/contact', (req, res) => {
-    const { name, email, message } = req.body;
+  const mailOptions = {
+    from: '"MaryPets" <website@marypets.pt>', // Formato recomendado
+    to: 'maypets.website@gmail.com',
+    subject: `Novo contato - ${req.body.name}`,
+    html: `
+      <h3>Contato do Site</h3>
+      <p><strong>De:</strong> ${req.body.name} (${req.body.email})</p>
+      <p>${req.body.message}</p>
+    `,
+    text: `Mensagem de ${req.body.name} (${req.body.email}): ${req.body.message}` // Versão texto
+  };
 
-    if (!name || !email || !message) {
-        return res.status(400).send('Todos os campos são obrigatórios');
-    }
-
-    const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: 'marypetsphotography@gmail.com',
-        subject: 'Novo contato do site Marypets',
-        html: `
-            <h2>Novo contato recebido</h2>
-            <p><strong>Nome:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Mensagem:</strong> ${message}</p>
-        `
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Erro ao enviar email:', error);
-            return res.status(500).json({ error: 'Erro ao enviar mensagem' });
-        }
-        res.status(200).json({ message: 'Mensagem enviada com sucesso!' });
+  try {
+    await transporter.sendMail(mailOptions);
+    res.status(200).json({ message: 'Mensagem enviada com sucesso!' });
+  } catch (error) {
+    console.error('Erro ao enviar email:', {
+      error: error.message,
+      stack: error.stack,
+      response: error.response
     });
+    res.status(500).json({ 
+      error: 'Falha ao enviar mensagem',
+      details: error.response || error.message
+    });
+  }
 });
 
 app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
